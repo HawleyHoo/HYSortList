@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="元素个数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zU-td-AqQ">
+                                <rect key="frame" x="0.0" y="20" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="UlX-nG-4dX"/>
+                                    <constraint firstAttribute="height" constant="40" id="Vv0-1H-9Eg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2MA-Qb-YxW">
+                                <rect key="frame" x="275" y="20" width="100" height="40"/>
+                                <color key="backgroundColor" red="0.83896433250000002" green="0.72760824820000003" blue="0.81429045" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Y06-OK-hOW"/>
+                                    <constraint firstAttribute="width" constant="100" id="u21-AQ-FF2"/>
+                                </constraints>
+                                <state key="normal" title="排序">
+                                    <color key="titleShadowColor" red="0.20000000000000001" green="0.6705882353" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TzD-tA-5QF"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZd-sq-Cg7">
+                                <rect key="frame" x="106" y="20" width="157" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4aN-if-2X0"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="iMN-aW-N4Q"/>
+                                </connections>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sU4-sx-917">
+                                <rect key="frame" x="6" y="68" width="363" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="Z24-wU-kc1"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="冒泡"/>
+                                    <segment title="选择"/>
+                                    <segment title="插入"/>
+                                    <segment title="希尔"/>
+                                    <segment title="堆排"/>
+                                    <segment title="归并"/>
+                                    <segment title="快排"/>
+                                    <segment title="基数"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlDidValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="C0C-mE-P6k"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PtO-cJ-vEE">
+                                <rect key="frame" x="6" y="108" width="363" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PtO-cJ-vEE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="6" id="0N7-U1-UvH"/>
+                            <constraint firstItem="NZd-sq-Cg7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="3Yz-mQ-GI3"/>
+                            <constraint firstAttribute="trailing" secondItem="2MA-Qb-YxW" secondAttribute="trailing" id="786-2y-jvm"/>
+                            <constraint firstItem="PtO-cJ-vEE" firstAttribute="top" secondItem="sU4-sx-917" secondAttribute="bottom" constant="12" id="HX7-2K-lU2"/>
+                            <constraint firstItem="NZd-sq-Cg7" firstAttribute="leading" secondItem="5zU-td-AqQ" secondAttribute="trailing" constant="6" id="HnR-F5-1ra"/>
+                            <constraint firstItem="5zU-td-AqQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="I5u-M8-h31"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PtO-cJ-vEE" secondAttribute="bottom" constant="12" id="IUb-rP-NPF"/>
+                            <constraint firstItem="5zU-td-AqQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Snt-mt-KqT"/>
+                            <constraint firstItem="sU4-sx-917" firstAttribute="top" secondItem="NZd-sq-Cg7" secondAttribute="bottom" constant="8" id="ULf-C5-juC"/>
+                            <constraint firstItem="2MA-Qb-YxW" firstAttribute="leading" secondItem="NZd-sq-Cg7" secondAttribute="trailing" constant="12" id="Ux0-HM-Jhl"/>
+                            <constraint firstAttribute="trailing" secondItem="sU4-sx-917" secondAttribute="trailing" constant="6" id="XB3-cX-hEg"/>
+                            <constraint firstItem="sU4-sx-917" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="6" id="mz2-Ph-L3h"/>
+                            <constraint firstItem="2MA-Qb-YxW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pNV-fp-zUS"/>
+                            <constraint firstAttribute="trailing" secondItem="PtO-cJ-vEE" secondAttribute="trailing" constant="6" id="sbo-H5-zzn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="confirmButton" destination="2MA-Qb-YxW" id="9qg-7b-9Pc"/>
+                        <outlet property="displayView" destination="PtO-cJ-vEE" id="SVP-Yt-gOv"/>
+                        <outlet property="numberTextField" destination="NZd-sq-Cg7" id="Fqr-lk-rFm"/>
+                        <outlet property="sortSegmentControl" destination="sU4-sx-917" id="C73-v1-9gc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="157.59999999999999" y="47.226386806596707"/>
+        </scene>
+    </scenes>
+</document>
