@@ -111,10 +111,8 @@
     CGFloat hh = self.displayView.frame.size.height;
     NSMutableArray *mutArray = [NSMutableArray array];
     for (int index = 0; index < self.sortCount; index++) {
-//        [mutArray addObject:@((arc4random() % RAND_MAX / (float)RAND_MAX) * hh)];
         [mutArray addObject:@((arc4random() % RAND_MAX))];
     }
-//    NSArray *array = @[@(62), @(88), @(58), @(47), @(62), @(35), @(73), @(51), @(99), @(37), @(93)];
     self.dataArray = mutArray.copy;
     
     for (int index = 0; index < self.sortCount; index++) {

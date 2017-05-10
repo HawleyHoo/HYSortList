@@ -30,11 +30,11 @@
 - (void)hydisplayResult:(NSUInteger)index value:(NSNumber *)value {
     
     [NSThread sleepForTimeInterval:0.001];
-//    dispatch_async(dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         if ([self.delegate respondsToSelector:@selector(displayResult:value:)]) {
             [self.delegate displayResult:index value:value];
         }
-//    });
+    });
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)0.001 * NSEC_PER_MSEC), dispatch_get_main_queue(), ^{
 //    });
 }
@@ -42,7 +42,7 @@
 // 冒泡排序
 - (NSArray *)bubbleSortWithArray:(NSArray *)array {
     NSMutableArray *mutArray = [NSMutableArray arrayWithArray:array];
-//    dispatch_async(dispatch_queue_create("serial", DISPATCH_QUEUE_SERIAL), ^{
+    dispatch_async(dispatch_queue_create("serial", DISPATCH_QUEUE_SERIAL), ^{
         time_t time1 = clock();
         NSLog(@" 冒泡排序： 开始！clock1: %ld", time1);
         for (NSUInteger i = 0; i < mutArray.count; i++) {
@@ -55,7 +55,7 @@
                     mutArray[j - 1] = temp;
                     [self hydisplayResult:j value:mutArray[j]];
                     [self hydisplayResult:j - 1 value:mutArray[j - 1]];
-                    NSLog(@" %@  %@",[NSThread currentThread] ,[NSThread currentThread].name);
+//                    NSLog(@"NSThread %@  %@",[NSThread currentThread] ,[NSThread currentThread].name);
                 }
                 j--;
             }
@@ -63,7 +63,7 @@
         time_t time2 = clock();
         NSLog(@" 冒泡排序： 完成！clock2: %ld", time2);
         NSLog(@" 用时：%.3f 秒", ((float)(time2 - time1)) / CLOCKS_PER_SEC);
-//    });
+    });
     
     
     return mutArray.copy;
